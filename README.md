@@ -53,3 +53,5 @@
  所以，一般为了让手机用户有良好的浏览体验，我们会在代码中添加以下语句
  
          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+         
+ 一是设置 `viewport` 的宽度为 `device-width`，即显示窗口等于设备宽度，也就是将原本 980 像素的 `viewport` 宽度更改为屏幕实际的像素宽度。二是设置窗口的 `initial-scale` 为 1， 即窗口默认不缩放。三是设置 `user-scalable` 为 `no`，让用户不可缩放页面。四是设置 `maximum-scale` 为 1，即设置窗口的最大缩放程度为 1。
