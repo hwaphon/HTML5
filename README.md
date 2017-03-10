@@ -52,4 +52,4 @@
 
  所以，一般为了让手机用户有良好的浏览体验，我们会在代码中添加以下语句
  
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
