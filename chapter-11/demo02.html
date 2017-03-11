@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	body {
+        		background-color: #000;
+        		margin: 10% 20%;
+        		color: #fff;
+        	}
+
+        	h1, p {
+        		background: url('image/bg.jpg') no-repeat 50% 0;
+        		background-attachment: fixed;
+        	}
+
+        	h1 {
+        		font-size: 120px;
+        	}
+
+        	p {
+        		font-size: 24px;
+        	}
+        </style>
+    </head>
+    <body>
+    			<h1>Hello World</h1>
+    	    	<p>The mental model for cloning, branching, opening pull requests, or pushing can be tricky for newbies just starting out. As a way to onboard students, Malan wrote a command-line tool that wraps a sequence of Git commands called submit50. They developed submit50 to not “reinvent the wheel” with a new submission system, but to create space for students to grow into comprehensive GitHub use as their learning evolves beyond CS50. Says Malan:
+
+    	    	Behind the scenes we show them the command so that through a bit of osmosis, they can infer what's actually going on.We clone their repo, which lives in our submit50 organization. So we have full administrative rights, and students have push and pull privileges only.
+    	   		</p> 	
+    	    	<p>The submit50 script clones that repo into a temporary directory. We do the equivalent of rm -rf to blow away whatever is currently in there, and then git-add the entire contents of their current working directory into that repo, and then tag it with a tag that corresponds to the problem's name, and then push it to the server.
+
+    	    	An example assignment is “C$50 Finance” where students build an application to simulate stock trades using Python with Flask, HTML, CSS and SQL.
+
+    	    	Students create tables with user accounts, who can then buy and sell stocks. The application queries Yahoo Finance for stock quotes, almost in real time.
+
+    	    	Malan is delighted to see the different personal touches students add to their projects, both functional and aesthetic.</p>
+    	    	<p>
+    	    	It's a fun way to delight in how much you've finished, particularly if new to programming just months prior. And it perhaps creates a bit of social pressure too. You know you're going to be showing this not just to your Teaching Fellow, but to your classmates, and you want to be proud of it. And so, hopefully, that incentivizes all the more of a strong finish.
+    			</p>
+    </body>
+</html>
