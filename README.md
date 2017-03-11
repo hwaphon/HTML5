@@ -58,7 +58,7 @@
  
  ---
  
- ### 11. HTML5 交互操作
+### 11. HTML5 交互操作
  
  - 可以通过 `::selection` 伪元素来自主修改反选样式，不过只能修改少量的 `CSS` 属性， 如 `color, background, cursor, outline` 等。
  - `offsetTop` 只能获取元素到父元素的高度差，如果想获取一个元素到浏览器顶端的距离，可以用如下代码
