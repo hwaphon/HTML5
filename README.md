@@ -55,3 +55,18 @@
          <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
          
  一是设置 `viewport` 的宽度为 `device-width`，即显示窗口等于设备宽度，也就是将原本 980 像素的 `viewport` 宽度更改为屏幕实际的像素宽度。二是设置窗口的 `initial-scale` 为 1， 即窗口默认不缩放。三是设置 `user-scalable` 为 `no`，让用户不可缩放页面。四是设置 `maximum-scale` 为 1，即设置窗口的最大缩放程度为 1。
+ 
+ ---
+ 
+ ### 11. HTML5 交互操作
+ 
+ - 可以通过 `::selection` 伪元素来自主修改反选样式，不过只能修改少量的 `CSS` 属性， 如 `color, background, cursor, outline` 等。
+ - `offsetTop` 只能获取元素到父元素的高度差，如果想获取一个元素到浏览器顶端的距离，可以用如下代码
+ 
+     		function getTop(e) {
+    			var offset = e.offsetTop;
+    			if(e.offsetParent != null) {
+    				offset += getTop(e.offsetParent);
+    			}
+    			return offset;
+    		}
