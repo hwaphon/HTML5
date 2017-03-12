@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	body {
+        		background: #006b9d;
+        	}
+
+        	#verify {
+        		width: 508px;
+        		height: 523px;
+        		background: url("image/bg.png");
+        		margin: 48px auto;
+        		position: relative;
+        	}
+
+        	#drag {
+        		width: 171px;
+        		height: 140px;
+        		background: url("image/drag.png");
+        		position: absolute;
+        		top: 185px;
+        		left: 0;
+        	}
+
+        	#dot {
+        		position: absolute;
+        		top: 460px;
+        		left: 70px;
+        		width: 29px;
+        		height: 29px;
+        		background: url("image/dot.png");
+        	}
+
+        	#success {
+        		position: absolute;
+        		top: 130px;
+        		right: 0;
+        		padding: 5px 20px;
+        		color: #fff;
+        		background: #C33;
+        		font-size: 32px;
+        		font-family: sans-serif;
+        		display: none;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div id="verify">
+    		<div id="drag"></div>
+    		<div id="dot"></div>
+    		<p id="success">Success!</p>
+    	</div>
+
+    	<script type="text/javascript">
+    		var max = 350,
+    			final = 158,
+    			buffer = 7,
+    			success = document.getElementById("success"),
+    			dot = document.getElementById("dot"),
+    			drag = document.getElementById("drag"),
+    			dotStart = dot.offsetLeft;
+
+    		drag.style.left = -Math.random()*200 + drag.offsetLeft +"px";
+    		var dragStart = drag.offsetLeft;
+
+    		dot.onmousedown = function(event) {
+    			var startX = event.clientX;
+    			var dotLeft = dot.offsetLeft;
+
+    			dot.onmousemove = function(event) {
+    				var move = event.clientX - startX;
+    				var to = dotLeft + move;
+
+    				if(to > max + dotLeft) {
+    					to = max + dotLeft;
+    				} else if(to < dotStart){
+    					to = dotStart;
+    				}
+
+    				dot.style.left = to + "px";
+    				drag.style.left = (dragStart + to - dotStart) + "px";
+    			};
+
+    			dot.onmouseup = function(event) {
+    				this.onmousemove = null;
+
+    				if(Math.abs(drag.offsetLeft - final) < buffer) {
+    					success.style.display = "block";
+    				} else {
+    					success.style.display = "none";
+    				}
+    			}
+    		};
+    	</script>
+    </body>
+</html>

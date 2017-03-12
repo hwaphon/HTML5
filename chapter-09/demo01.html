@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			html, body {
+				height: 100%;
+			}
+
+			body {
+				background-color: rgba(0,204,153,.6);
+			}
+			#canvas {
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="1000" height="640">Your broswer not support canvas!</canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById("canvas"),
+				ctx = canvas.getContext("2d");
+
+			var particle = [];
+			for(var i = 0; i < 500; i++) {
+				particle.push({
+					x: window.innerWidth * Math.random(),
+					y: window.innerHeight * Math.random(),
+					vx: Math.random() * 1 - 0.5,
+					vy: Math.random() * 1 + 0.5, 
+					size: 1 + Math.random() * 2,
+					color: "#fff"
+				});
+			}
+
+			function timeUpdate(e) {
+				ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+
+				var part;
+				for(var i = 0; i < 500; i++) {
+					part = particle[i];
+					part.x += part.vx;
+					part.y += part.vy;
+
+					if(part.x < 0) {
+						part.x = 0;
+					}
+
+					if(part.x > window.innerWidth) {
+						part.x = window.innerWidth;
+					}
+
+					if(part.y >= window.innerHeight) {
+						part.y = 0;
+					}
+
+					ctx.fillStyle = part.color;
+					ctx.beginPath();
+					ctx.arc(part.x, part.y, part.size,0,Math.PI*2, true);
+					ctx.closePath();
+					ctx.fill();
+				}
+
+				setTimeout(timeUpdate, 40);
+			}
+
+			setTimeout(timeUpdate, 40);
+
+		</script>
+	</body>
+</html>

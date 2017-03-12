@@ -61,7 +61,7 @@
         		border-bottom: 8px solid #fff;
         		padding-bottom: 24px;
         		margin-bottom: 24px;
-        		text-shadow: 1px 1px 0 rgba(0,0,0,.15);
+        		text-shadow: -1px -1px 0 rgba(0,0,0,.4);
         		text-transform: uppercase;
         	}
 
@@ -71,9 +71,15 @@
 
         	#content p {
         		line-height: 1.5;
-        		text-shadow: 1px 1px 0 rgba(0,0,0,.15);
+        		text-shadow: 1px 1px 0 rgba(0,0,0,.5);
         		margin-bottom: 24px;
         	}
+
+            ::selection {
+                color: #fff;
+                background-color: #E74C3C;
+                text-shadow: none;
+            }
         </style>
     </head>
     <body>
@@ -175,6 +181,22 @@
     				add(ch1);
     			}
     		},false);
+
+            // for Firefox
+            document.body.addEventListener("DOMMouseScroll", function(event) {
+                var offsetTop = event.pageY;
+                remove();
+
+                if(offsetTop + 50 > chap4Top) {
+                    add(ch4);
+                } else if(offsetTop + 50 > chap3Top) {
+                    add(ch3);
+                } else if(offsetTop + 50> chap2Top) {
+                    add(ch2);
+                } else {    
+                    add(ch1);
+                }
+            },false);
 
     		function add(element) {
     			element.classList.add("scrolling");
