@@ -49,11 +49,13 @@
 					part.y += part.vy;
 
 					if(part.x < 0) {
-						part.x = 0;
+						part.y = 0;
+						part.x = Math.random() * window.innerWidth;
 					}
 
 					if(part.x > window.innerWidth) {
-						part.x = window.innerWidth;
+						part.y = 0;
+						part.x = Math.random() * window.innerWidth;
 					}
 
 					if(part.y >= window.innerHeight) {
