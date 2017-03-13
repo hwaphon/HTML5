@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			body {
+				background-color: #69C;
+			}
+
+			#box {
+				width: 96px;
+				height: 96px;
+				border: 2px solid #fff;
+				margin: 128px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script src="http://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+		<script type="text/javascript">
+			
+			TweenMax.to(box,2,{borderRadius: "50%", repeat: -1});
+		</script>
+	</body>
+</html>
