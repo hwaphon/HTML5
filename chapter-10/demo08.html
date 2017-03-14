@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	#sec {
+        		width: 200px;
+        		height: 500px;
+        		background: url('image/bg.jpg');
+        		position: relative;
+        		overflow: hidden;
+        	}
+
+        	#sec-description {
+        		position: absolute;
+        		color: #fff;
+        		box-sizing: border-box;
+        		padding: 0 40px;
+        		font-family: sans-serif;
+        		z-index: 20;
+        		-webkit-transform-style: preserve-3d;
+        	}
+
+        	#sec-description h1 {
+        		font-size: 48px;
+        		-webkit-backface-visibility: hidden;
+        	}
+
+        	#sec-description p {
+        		font-size: 14px;
+        		-webkit-backface-visibility: hidden;
+        	}
+
+        	#polygon {
+        		stroke-width: 0;
+        		fill: #34495E;
+        	}
+
+        	#sec svg {
+        		transition: all .5s;
+        	}
+
+        	#sec:hover svg{
+        		opacity: 0.8;
+        		transform: translateY(-30px);
+        		transition: all .5s;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div id="sec">
+    		<div id="sec-description">
+    		    <h1>Zerg</h1>
+    		    <p>Led by the cunning Queen of Blades, the zerg are set to unleash their alien horrors on the galaxy.</p>
+    		</div>
+
+    		<svg width="200px" height="500px">
+    			<polygon points="0,0,200,0,200,350,0,250" fill="white" stroke="blue" id="polygon"/>
+    		</svg>
+    	</div>
+    </body>
+</html>
