@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	body {
+        		height: 1800px;
+        		position: relative;
+        	}
+
+        	#top {
+        		border-radius: 50%;
+        		position: absolute;
+        		width: 60px;
+        		height: 60px;
+        		color: #fff;
+        		background-color: #E74C3C;
+        		text-align: center;
+        		line-height: 60px;
+        		right: 40px;
+        		bottom: 40px;
+        		position: fixed;
+        		cursor: pointer;
+        		z-index: 5000;
+        	}
+
+        	#top {
+        		opacity: 0;
+        	}
+
+        	#top.show {
+        		opacity: 1;
+        		transition: all .5s;
+        	}
+
+        </style>
+    </head>
+    <body>
+    	<div id="top">Top</div>
+
+    	<script type="text/javascript">
+    		var nav = document.getElementById("top");
+
+    		window.onscroll = function() {
+    			var scrollTop = document.body.scrollTop;
+
+    			if(scrollTop > 200) {
+    				nav.className = "show";
+    			} else {
+    				nav.className = "";
+    			}
+
+    		}
+
+    		nav.onclick = function() {
+    			document.body.scrollTop = 0;
+    		}
+    	</script>
+    </body>
+</html>
